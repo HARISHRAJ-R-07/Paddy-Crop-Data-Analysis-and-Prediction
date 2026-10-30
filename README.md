@@ -9,7 +9,9 @@
 <p align="center">
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python">
   <img src="https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas">
-  <img src="https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white" alt="Scikit-learn">
+  <img src="https://img.shields.io/badge/NumPy-013243?style=for-the-badge&logo=numpy&logoColor=white" alt="NumPy">
+  <img src="https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" alt="Scikit-learn">
+  <img src="https://img.shields.io/badge/Seaborn-4C72B0?style=for-the-badge" alt="Seaborn">
   <img src="https://img.shields.io/badge/Domain-Agriculture-2E8B57?style=for-the-badge" alt="Agriculture">
 </p>
 
@@ -19,19 +21,24 @@
 
 ### 📌 Problem Statement
 
-Paddy cultivation plays an important role in agriculture and food production. Understanding the relationship between agricultural factors and crop yield can help identify meaningful patterns and support data-driven farming decisions.
+Agriculture plays a vital role in food production and economic development. Paddy cultivation, in particular, depends on several agricultural factors, including soil characteristics, crop varieties, cultivated area, and farming practices.
 
-This project explores paddy cultivation data and applies **supervised machine learning regression algorithms** to predict paddy yield using agricultural features.
+Understanding how these factors influence crop yield can help identify meaningful patterns and support better agricultural decision-making.
+
+This project focuses on analyzing paddy cultivation data and developing supervised machine learning regression models to predict paddy yield using agricultural features.
 
 ### 🎯 Project Objectives
 
-- 🔍 Explore the dataset and understand its structure.
+- 🔍 Understand the dataset structure and its characteristics.
 - 🧹 Identify missing values, duplicate records, and potential outliers.
-- 📊 Analyze relationships between agricultural features and paddy yield.
-- ⚙️ Perform data cleaning, categorical encoding, and feature selection.
-- 🤖 Train and compare regression models.
-- 📈 Evaluate model performance on unseen test data.
-- 🛠️ Tune model hyperparameters using cross-validation.
+- 📊 Perform Exploratory Data Analysis (EDA).
+- 📈 Identify relationships between agricultural features and paddy yield.
+- ⚙️ Apply data preprocessing and categorical encoding techniques.
+- 🎯 Perform feature selection and feature scaling where appropriate.
+- 🤖 Build and compare supervised machine learning regression models.
+- 🛠️ Optimize model hyperparameters using cross-validation.
+- 📉 Evaluate model performance using appropriate regression metrics.
+- 🌾 Predict paddy yield based on agricultural information.
 
 ### 📋 Project Details
 
@@ -39,7 +46,8 @@ This project explores paddy cultivation data and applies **supervised machine le
 |---|---|
 | **Project Title** | Paddy Crop Data Analysis and Prediction |
 | **Domain** | Agriculture & Data Science |
-| **Project Type** | Supervised Machine Learning — Regression |
+| **Project Type** | Supervised Machine Learning – Regression |
+| **Dataset Size** | 2,789 rows (before duplicate removal) |
 | **Target Variable** | `Paddy yield(in Kg)` |
 | **Student** | Harishraj R |
 | **Batch** | DS-ANB-04 |
@@ -48,13 +56,24 @@ This project explores paddy cultivation data and applies **supervised machine le
 
 ## 📂 2. Dataset Information
 
-The dataset contains agricultural information related to paddy cultivation, including agricultural blocks, paddy varieties, soil types, cultivated area, and other cultivation-related features.
+The dataset contains agricultural information related to paddy cultivation.
 
-🔗 **Dataset:** [View and download the Paddy Dataset](https://raw.githubusercontent.com/HARISHRAJ-R-07/Project-dataset-csv-files/refs/heads/main/paddydataset.csv)
+It includes information such as:
 
-**Target variable:** `Paddy yield(in Kg)`
+- Agricultural blocks
+- Paddy varieties
+- Soil types
+- Nursery information
+- Cultivated area
+- Seed rate
+- Fertilizer-related information
+- Other agricultural and cultivation features
 
-The regression models aim to predict this numerical target using the available agricultural features.
+🔗 **Dataset:** [View and Download Paddy Dataset](https://raw.githubusercontent.com/HARISHRAJ-R-07/Project-dataset-csv-files/refs/heads/main/paddydataset.csv)
+
+**Target Variable:** `Paddy yield(in Kg)`
+
+The objective is to predict the numerical paddy yield using the available agricultural features.
 
 ---
 
@@ -62,84 +81,127 @@ The regression models aim to predict this numerical target using the available a
 
 | Technology | Purpose |
 |---|---|
-| Python | Programming and analysis |
-| Pandas & NumPy | Data manipulation and numerical operations |
-| Matplotlib & Seaborn | Data visualization |
-| Scikit-learn | Machine learning and model evaluation |
+| Python | Programming and data analysis |
+| Pandas | Data manipulation and cleaning |
+| NumPy | Numerical operations |
+| Matplotlib | Data visualization |
+| Seaborn | Statistical data visualization |
 | SciPy | Statistical analysis |
-| Jupyter Notebook / Google Colab | Development environment |
+| Scikit-learn | Machine learning and model evaluation |
+| Google Colab | Development environment |
 
 ---
 
 ## 🔄 4. Project Workflow
 
+The project follows a structured machine learning workflow:
+
 ```text
-       📥 Dataset Collection
-                ↓
-       🔍 Data Understanding
-                ↓
-       📊 Exploratory Data Analysis
-                ↓
-       🧹 Data Cleaning & Preprocessing
-                ↓
-       ⚙️ Encoding & Feature Selection
-                ↓
-       ✂️ Train-Test Split
-                ↓
-       🤖 Model Training & Comparison
-                ↓
-       🛠️ Hyperparameter Tuning
-                ↓
-       📈 Model Evaluation
-                ↓
-       🌾 Paddy Yield Prediction
+        📥 Dataset Collection
+                 ↓
+        🔍 Data Understanding
+                 ↓
+        📊 Exploratory Data Analysis
+                 ↓
+        🧹 Data Cleaning
+                 ↓
+        ⚙️ Data Preprocessing
+                 ↓
+        🎯 Feature Selection
+                 ↓
+        ✂️ Train-Test Split
+                 ↓
+        🤖 Model Training
+                 ↓
+        🛠️ Hyperparameter Tuning
+                 ↓
+        📈 Model Evaluation
+                 ↓
+        🌾 Paddy Yield Prediction
 ```
 
 ---
 
-## 🤖 5. Machine Learning Models
+## 🔍 5. Exploratory Data Analysis (EDA)
 
-The project compares the following regression algorithms:
+Exploratory Data Analysis is performed to understand the dataset and discover meaningful agricultural patterns.
+
+The analysis includes:
+
+- Dataset shape and information
+- Statistical summaries
+- Missing value analysis
+- Duplicate record identification
+- Numerical feature distributions
+- Categorical feature analysis
+- Outlier detection
+- Correlation analysis
+- Relationship between agricultural features and paddy yield
+
+---
+
+## ⚙️ 6. Data Preprocessing
+
+The following preprocessing techniques are considered:
+
+- Handling duplicate records
+- Checking and handling missing values
+- Identifying potential outliers
+- Encoding categorical variables
+- Feature selection
+- Feature scaling using StandardScaler
+- Splitting data into training and testing sets
+
+Preprocessing operations are fitted using training data where necessary to prevent data leakage.
+
+---
+
+## 🤖 7. Machine Learning Models
+
+The project explores supervised machine learning regression algorithms, including:
 
 - **Decision Tree Regressor**
 - **Random Forest Regressor**
 - **Gradient Boosting Regressor**
 
-Hyperparameter optimization is performed using `RandomizedSearchCV` with five-fold cross-validation.
+Model performance is compared to identify a suitable approach for paddy yield prediction.
 
-The final model is selected based on cross-validation results and performance on unseen test data.
+Hyperparameter optimization using `RandomizedSearchCV` and five-fold cross-validation can be used where implemented in the notebook.
 
 ---
 
-## 📈 6. Model Evaluation Metrics
+## 📈 8. Model Evaluation Metrics
 
-| Metric | Purpose |
+The regression models are evaluated using the following metrics:
+
+| Evaluation Metric | Purpose |
 |---|---|
-| **MAE** — Mean Absolute Error | Measures the average absolute prediction error |
-| **RMSE** — Root Mean Squared Error | Penalizes larger prediction errors more strongly |
-| **R² Score** | Measures how well the model explains target variability |
+| **MAE** – Mean Absolute Error | Measures the average absolute prediction error |
+| **RMSE** – Root Mean Squared Error | Gives greater weight to larger prediction errors |
+| **R² Score** | Measures how well the model explains the variation in paddy yield |
 
-The evaluation results help compare the models and identify a suitable approach for paddy yield prediction.
+The final model should be selected based on cross-validation and unseen test-set performance.
 
 ---
 
-## 📊 7. Visualizations
+## 📊 9. Visualizations
 
-The `Visualizations/` folder contains plots created during exploratory data analysis and model evaluation.
+The `Visualizations/` directory contains plots generated during the data analysis and machine learning process.
 
-Examples include:
+Examples:
 
-- Distribution of paddy yield
+- Paddy yield distribution
 - Correlation heatmap
-- Agricultural feature distributions
-- Relationships between selected features and paddy yield
-- Model evaluation visualizations, where available
+- Numerical feature distributions
+- Agricultural feature comparisons
+- Feature relationships with paddy yield
+- Model performance comparison
 
-*Only include plots that have actually been generated and saved in the repository.*
+*Only include visualizations that have actually been generated and saved.*
 
 ---
 
-## 📁 8. Repository Structure
+## 📁 10. Repository Structure
 
 ```text
 Paddy-Crop-Data-Analysis-and-Prediction/
@@ -151,51 +213,58 @@ Paddy-Crop-Data-Analysis-and-Prediction/
 └── Visualizations/
     ├── target_distribution.png
     ├── correlation_heatmap.png
-    └── other_eda_plots.png
+    ├── feature_analysis.png
+    └── model_comparison.png
 ```
 
 ---
 
-## 🚀 9. Installation & Usage
+## 🚀 11. Installation & Usage
 
 ### Step 1: Clone the Repository
 
-Replace the placeholder with your actual GitHub repository URL.
-
 ```bash
 git clone YOUR_GITHUB_REPOSITORY_URL
+```
+
+### Step 2: Navigate to the Project Folder
+
+```bash
 cd Paddy-Crop-Data-Analysis-and-Prediction
 ```
 
-### Step 2: Install Dependencies
+### Step 3: Install Required Libraries
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### Step 3: Launch the Notebook
+### Step 4: Open the Jupyter Notebook
 
 ```bash
 jupyter notebook Project_Notebook.ipynb
 ```
 
-Alternatively, open the notebook in **Google Colab** and execute the cells in order.
+Alternatively, open the notebook using Google Colab.
 
-> **Note:** The notebook retrieves the dataset from GitHub using its raw URL, so an internet connection is required.
+**Note:** An internet connection is required if the notebook downloads the dataset directly from the GitHub raw URL.
 
 ---
 
-## 👨‍💻 10. Author
+## 👨‍💻 12. Author
 
-**Harishraj R**  
+**Harishraj R**
+
 *Aspiring Data Science Professional*
 
-- 🐙 **GitHub:** [HARISHRAJ-R-07](https://github.com/HARISHRAJ-R-07)
+🎓 B.Sc. Computer Science and Data Science
+
+🐙 **GitHub:** [HARISHRAJ-R-07](https://github.com/HARISHRAJ-R-07)
 
 ---
 
 <p align="center">
   🌾 <strong>Exploring Data. Building Models. Supporting Smarter Agriculture.</strong>
   <br>
-  <em>A hands-on project in data analysis and supervised machine learning.</em>
+  <em>A hands-on journey into agricultural data analysis and machine learning.</em>
 </p>
